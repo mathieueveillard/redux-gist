@@ -1,11 +1,6 @@
 type Reducer<State> = (state: State) => State;
 
-type Store<State> = {
-  getState: () => State;
-  updateState: (reducer: Reducer<State>) => void;
-};
-
-const createStore = <State>(defaultState: State): Store<State> => {
+const createStore = <State>(defaultState: State) => {
   let state: State = defaultState;
 
   const getState = (): State => state;
